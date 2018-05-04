@@ -8,7 +8,7 @@ contract Insurance{
         address user_address;
         string fname;
         string lname;
-        unit active;
+        uint active;
     }
 
     struct Policy{
@@ -41,18 +41,16 @@ contract Insurance{
         if(users_list[msg.sender].active == 1){
             return;
         }
-        users_list[msg.sender] = User(email, password, msg.sender, 1, fname, lname);
+        users_list[msg.sender] = User(email, password, msg.sender, fname, lname, 1);
     }
 
 
     function take_insurance(string b_email) public 
     {
-        policy_no++;
-        pol = Policy(policy_no, benefactor_email, msg.sender, policy_status.ACTIVE);
-        user_policies[msg.sender] = pol;
+        user_policies[msg.sender] = Policy(policy_no, b_email, msg.sender, policy_status.ACTIVE);
     }
 
-    function get_policy_status() public {
+    function get_policy_status() public constant returns (policy_status){
         return user_policies[msg.sender].flag;
     }
 
