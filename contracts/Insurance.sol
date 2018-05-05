@@ -43,7 +43,13 @@ contract Insurance{
         }
         users_list[msg.sender] = User(email, password, msg.sender, fname, lname, 1);
     }
+    function get_user() public constant returns (string, string, string, uint){
+        return (users_list[msg.sender].fname, users_list[msg.sender].lname, users_list[msg.sender].email, users_list[msg.sender].active); 
+    }
 
+    function getUserByAddress(address requestAddress) public constant returns(string,string,string) {
+    return (users_list[requestAddress].fname, users_list[requestAddress].lname, users_list[requestAddress].email);  
+  }
 
     function take_insurance(string b_email) public 
     {
@@ -52,6 +58,10 @@ contract Insurance{
 
     function get_policy_status() public constant returns (policy_status){
         return user_policies[msg.sender].flag;
+    }
+    function get_policy_details() public constant returns (uint, string, address, policy_status){
+        var p = user_policies[msg.sender];
+        return (p.policy_number, p.benefactor_email, msg.sender, p.flag);
     }
 
     function claim_money() public {
