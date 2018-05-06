@@ -15,16 +15,10 @@ App = {
       web3 = new Web3(web3.currentProvider);
     } else {
       // set the provider you want from Web3.providers
-      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
       web3 = new Web3(App.web3Provider);
     }
 
-
-    /*web3.eth.getAccounts(function(err, accounts){
-        if (err != null) console.error("An error occurred: "+err);
-        else if (accounts.length == 0) console.log("User is not logged in to MetaMask");
-        else console.log("User is logged in to MetaMask "+accounts);
-*/
     });
 
     return App.initContract();
@@ -37,7 +31,7 @@ App = {
 
       // Set the provider for our contract.
       App.contracts.Insurance.setProvider(App.web3Provider);
-     
+
     });
   },
 
