@@ -26,5 +26,10 @@ function showHideBuyPlatinum() {
     }
 }
 function goToBuyPage() {
-    window.location = 'index.html';
+    window.location = 'homepage.html';
 }
+
+function goToClaimPage() {
+  window.location = 'claim.html';
+}
+

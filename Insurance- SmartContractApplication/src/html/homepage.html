@@ -15,9 +15,6 @@
 
   <!-- Custom styles for this template -->
   <link href="../css/homepage.css" rel="stylesheet">
-
-
-
 </head>
 
 <body class="sliding-background">
@@ -93,7 +90,8 @@
                   </ul>
                 </li>
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Buy</button>
+              <button type="button" id="buy-silver" class="btn btn-lg btn-block btn-primary" onclick="showHideBuySilver()" data-target="#beneficiarySilverDetails"
+                data-toggle="modal">Buy</button>
             </div>
           </div>
           <div class="card mb-4 box-shadow">
@@ -119,7 +117,8 @@
                   </ul>
                 </li>
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Buy</button>
+              <button type="button" id="buy-gold" class="btn btn-lg btn-block btn-primary" onclick="showHideBuyGold()" data-target="#beneficiaryGoldDetails"
+                data-toggle="modal">Buy</button>
             </div>
           </div>
           <div class="card mb-4 box-shadow">
@@ -145,18 +144,255 @@
                   </ul>
                 </li>
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Buy</button>
+              <button type="button" id="buy-platinum" class="btn btn-lg btn-block btn-primary" onclick="showHideBuyPlatinum()" data-target="#beneficiaryPlatinumDetails"
+                data-toggle="modal" >Buy</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!--MODAL displays-->
+  <!--Modal for Beneficiary start-->
+  <!--Silver-->
+  <div class="modal fade" id="beneficiarySilverDetails" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Please nominate a beneficiary</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <form>
+                <div class="form-group">
+                  <label for="article_name">Please add a beneficiary to your account</label>
+                </div>
+                <div class="form-group">
+                  <label for="description">Beneficiary Email</label>
+                  <input type="email" class="form-control" id="article_name" placeholder="abc@xyz.com">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-success" data-dismiss="modal" data-target="#sellArticleSilver"
+            data-toggle="modal">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--Gold-->
+  <div class="modal fade" id="beneficiaryGoldDetails" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Please nominate a beneficiary</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <form>
+                <div class="form-group">
+                  <label for="article_name">Please add a beneficiary to your account</label>
+                </div>
+                <div class="form-group">
+                  <label for="description">Beneficiary Email</label>
+                  <input type="email" class="form-control" id="article_name" placeholder="abc@xyz.com">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-success" data-dismiss="modal" data-target="#sellArticleGold"
+            data-toggle="modal">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Platinum-->
+<div class="modal fade" id="beneficiaryPlatinumDetails" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Please nominate a beneficiary</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <form>
+              <div class="form-group">
+                <label for="article_name">Please add a beneficiary to your account</label>
+              </div>
+              <div class="form-group">
+                <label for="description">Beneficiary Email</label>
+                <input type="email" class="form-control" id="article_name" placeholder="abc@xyz.com">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-success" data-dismiss="modal" data-target="#sellArticlePlatinum"
+          data-toggle="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--modal beneficiary platinum-->
+  <!--Modal for BEneficiary end-->
+
+  <!--Modal Silver start-->
+  <div class="modal fade" id="sellArticleSilver" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Congratulations!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <form>
+                <div class="form-group">
+                  <label for="article_name">Below are the details your Silver Insurance</label>
+                </div>
+                <div class="form-group">
+                  <label for="price">Policy ID</label>
+                  <textarea type="text" class="form-control vresize" id="article_description" placeholder="4200881493" maxlength="255" disabled="true"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="description">Policy Coverage</label>
+                  <textarea type="text" class="form-control vresize" id="article_description" placeholder="40 Coverage" maxlength="255" disabled="true"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="description">Policy Duration</label>
+                  <textarea type="text" class="form-control vresize" id="article_description" placeholder="5 months validity" maxlength="255"
+                    disabled="true"></textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal" onclick="goToClaimPage()" >Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal Silver end-->
+
+  <!--Modal GOld-->
+  <div class="modal fade" id="sellArticleGold" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Congratulations!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <form>
+                <div class="form-group">
+                  <label for="article_name">Below are the details your Gold Insurance</label>
+                </div>
+                <div class="form-group">
+                  <label for="price">Policy ID</label>
+                  <textarea type="text" class="form-control vresize" id="article_description" placeholder="5333657123" maxlength="255" disabled="true"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="description">Policy Coverage</label>
+                  <textarea type="text" class="form-control vresize" id="article_description" placeholder="65 Coverage" maxlength="255" disabled="true"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="description">Policy Duration</label>
+                  <textarea type="text" class="form-control vresize" id="article_description" placeholder="11 months validity" maxlength="255"
+                    disabled="true"></textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal" onclick="goToClaimPage()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal Gold end-->
+
+<!--Modal Platinum start-->
+<div class="modal fade" id="sellArticlePlatinum" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Congratulations!</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <form>
+              <div class="form-group">
+                <label for="article_name">Below are the details your Platinum Insurance</label>
+              </div>
+              <div class="form-group">
+                <label for="price">Policy ID</label>
+                <textarea type="text" class="form-control vresize" id="article_description" placeholder="3336827633" maxlength="255" disabled="true"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="description">Policy Coverage</label>
+                <textarea type="text" class="form-control vresize" id="article_description" placeholder="85 Coverage" maxlength="255" disabled="true"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="description">Policy Duration</label>
+                <textarea type="text" class="form-control vresize" id="article_description" placeholder="1.2 years validity" maxlength="255"
+                  disabled="true"></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal" onclick="goToClaimPage()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--Modal Platinum end-->
+
+  <!--Modal display ends-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="../js/jquery-slim.min.js"><\/script>')</script>
   <script src="../jspopper.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/events.js"></script>
   <script src="../holder.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
