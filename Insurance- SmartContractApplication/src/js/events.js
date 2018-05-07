@@ -24,3 +24,8 @@ function showHideBuyPlatinum() {
 function goToBuyPage() {
     window.location = 'homepage.html';
 }
+
+function goToClaimPage() {
+  window.location = 'claim.html';
+}
+
