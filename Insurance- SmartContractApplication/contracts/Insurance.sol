@@ -36,7 +36,7 @@ contract Insurance{
     }
 
     function get_user() public constant returns (string, string, string, uint, uint){
-        return (users_list[msg.sender].fname, users_list[msg.sender].lname, users_list[msg.sender].email, users_list[msg.sender].active, policies_bought[requestAddress]); 
+        return (users_list[msg.sender].fname, users_list[msg.sender].lname, users_list[msg.sender].email, users_list[msg.sender].active, policies_bought[msg.sender]); 
     }
 
     function get_user_by_address(address requestAddress) public constant returns(string,string,string, uint, uint) {
