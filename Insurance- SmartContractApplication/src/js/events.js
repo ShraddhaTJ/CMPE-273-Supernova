@@ -22,5 +22,5 @@ function showHideBuyPlatinum() {
     }
 }
 function goToBuyPage() {
-    window.location = 'index.html';
+    window.location = 'homepage.html';
 }
