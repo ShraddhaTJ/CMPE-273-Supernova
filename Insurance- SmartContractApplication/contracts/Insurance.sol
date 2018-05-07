@@ -19,23 +19,10 @@ contract Insurance{
         policy_type type;
     }
 
-
-    struct Pay{
-        uint payment_id;
-        uint policy_number;
-        uint amount;
-    }
-
-    struct Claim{
-        uint claim_id;
-        uint policy_number;
-        uint amount;
-    }
-
     enum policy_type {SILVER, GOLD, PLATINUM}
     enum policy_status {ACTIVE, CLAIMED}
     
-    uint policy_no = 0;
+    uint policy_no = 2354098000;
     mapping(address => User) public users_list;
     mapping(address => Policy) public user_policies;
     mapping(address => unit) public policies_bought;
@@ -48,8 +35,8 @@ contract Insurance{
         users_list[msg.sender] = User(email, password, msg.sender, fname, lname, 1);
     }
 
-    function get_user() public constant returns (string, string, string, uint){
-        return (users_list[msg.sender].fname, users_list[msg.sender].lname, users_list[msg.sender].email, users_list[msg.sender].active); 
+    function get_user() public constant returns (string, string, string, uint, uint){
+        return (users_list[msg.sender].fname, users_list[msg.sender].lname, users_list[msg.sender].email, users_list[msg.sender].active, policies_bought[requestAddress]); 
     }
 
     function get_user_by_address(address requestAddress) public constant returns(string,string,string, uint, uint) {
@@ -58,6 +45,7 @@ contract Insurance{
 
     function take_insurance(string b_email) public 
     {
+        policy_no++;
         user_policies[msg.sender] = Policy(policy_no, b_email, msg.sender, policy_status.ACTIVE);
         policies_bought[msg.sender] = policies_bought[msg.sender] + 1;
     }
