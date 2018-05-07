@@ -15,6 +15,32 @@
 
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
+    <script type="text/javascript">
+      
+      function showHideBuySilver(){
+        if(document.getElementById('buy-silver')){
+          document.getElementById('buy-gold').disabled=true;
+          document.getElementById('buy-platinum').disabled=true;
+        } 
+      }
+      function showHideBuyGold(){
+        if(document.getElementById('buy-gold')){
+          document.getElementById('buy-silver').disabled=true;
+          document.getElementById('buy-platinum').disabled=true;
+
+        }
+      }
+      function showHideBuyPlatinum(){
+        if(document.getElementById('buy-platinum')){
+          document.getElementById('buy-silver').disabled=true;
+          document.getElementById('buy-gold').disabled=true;
+
+        }
+      }
+      function goToBuyPage(){
+        window.location ='index.html';
+      }
+    </script>
 </head>
 
 <body>
@@ -24,53 +50,27 @@
         <a class="btn btn-outline-primary" href="#">Log out</a>
     </div>
     <div class="pricing-header px-3 py-3 pt-md-2 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Pricing</h1>
+        <h1 class="display-4">Active policies</h1>
       </div>
   
       <div class="container">
         <div class="card-deck mb-3 text-center">
-          <div class="card mb-4 box-shadow">
+              <div class="card mb-4 box-shadow">
             <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Silver</h4>
+              <h4 class="my-0 font-weight-normal">Dummy Policy Details</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">Ξ 10</h1>
+              <h1 class="card-title pricing-card-title">Ξ XX</h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>Policy id: 4200881493</li>
-                <li>Policy name: Ethereum Silver</li>
+                <li>Policy id: 123123123</li>
+                <li>Policy name: Ethereum XXXX</li>
                 <li>Features 
                     <ul class="list-unstyled">
                         <li>
-                            <small class="text-muted">Ξ 40 Coverage</small>
+                            <small class="text-muted">Ξ XX Coverage</small>
                         </li>
                         <li>
-                            <small class="text-muted">5 Months Validity</small>
-                        </li>
-                        <li>
-                            <small class="text-muted">Valid within United States</small>
-                        </li>
-                    </ul>
-                </li>
-              </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Buy</button>
-            </div>
-          </div>
-          <div class="card mb-4 box-shadow">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Gold</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">Ξ 15</h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>Policy id: 5333657123</li>
-                <li>Policy name: Ethereum Gold</li>
-                <li>Features 
-                    <ul class="list-unstyled">
-                        <li>
-                            <small class="text-muted">Ξ 65 Coverage</small>
-                        </li>
-                        <li>
-                            <small class="text-muted">11 Months Validity</small>
+                            <small class="text-muted">xx Months Validity</small>
                         </li>
                         <li>
                             <small class="text-muted">Valid within United States and other few countries</small>
@@ -78,38 +78,54 @@
                     </ul>
                 </li>
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Buy</button>
-            </div>
-          </div>
-          <div class="card mb-4 box-shadow">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Platinum</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">Ξ 29</h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>Policy id: 3336827633</li>
-                <li>Policy name: Ethereum Platinum</li>
-                <li>Features 
-                    <ul class="list-unstyled">
-                        <li>
-                            <small class="text-muted">Ξ 85 Coverage</small>
-                        </li>
-                        <li>
-                            <small class="text-muted">1.2 Years Validity</small>
-                        </li>
-                        <li>
-                            <small class="text-muted">Valid all around the world</small>
-                        </li>
-                    </ul>
-                </li>
-              </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Buy</button>
+              <button type="button" id="buy-gold" class="btn btn-lg btn-block btn-primary" onclick="showHideBuyGold()" data-target="#sellArticleGold" data-toggle="modal">Claim</button>
             </div>
           </div>
         </div>
       </div>
-  
+
+  <!--Modal GOld-->
+  <div class="modal fade" id="sellArticleGold" role="dialog">
+    <div class="modal-dialog">
+   <div class="modal-content">
+        <div class="modal-header">
+        <h4 class="modal-title">Claim successful!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <form>
+                <div class="form-group">
+                  <label for="article_name">Below are the details of your insurance claim</label>
+                </div>
+                <div class="form-group">
+                  <label for="price">Policy ID</label>
+                  <textarea type="text" class="form-control vresize" id="article_description" placeholder="5333657123" maxlength="255" disabled="true"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="description">Policy Coverage</label>
+                  <textarea type="text" class="form-control vresize" id="article_description" placeholder="65 Coverage" maxlength="255" disabled="true"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="description">Policy Duration</label>
+                  <textarea type="text" class="form-control vresize" id="article_description" placeholder="11 months validity" maxlength="255" disabled="true"></textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal" onclick="goToBuyPage()">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<!--Modal Gold end-->
+ 
   
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../js/jquery-slim.min.js"><\/script>')</script>
