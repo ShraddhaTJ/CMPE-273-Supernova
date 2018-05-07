@@ -1,5 +1,9 @@
 function getUserDetails() {
-    get_user_by_address(web3.eth.accounts[0]);
+    var user = "";
+    get_user_by_address(web3.eth.accounts[0], function(user_details){
+        user = user_details;
+    });
+    return user;
 }
 
 
