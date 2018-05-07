@@ -1,0 +1,58 @@
+.sliding-background {
+    animation-name: stretch;
+    animation-duration: 20s;
+    animation-timing-function: step-end;
+    animation-delay: 1s;
+    animation-direction:inherit;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-play-state:initial;
+  }
+
+  @keyframes stretch {
+    0% {
+      background-size:100% 100%;
+      background-position: 0px;
+      background: url("../html/images/slide1.jpg") no-repeat;
+    }
+    33% {
+      background-size:100% 100%;
+      background-position: 0px;
+      background: url("../html/images/slide2.jpg") no-repeat;
+    }
+    66% {
+      background-size:100% 100%;
+      background-position: 0px;
+      background: url("../html/images/slide3.jpg") no-repeat;
+    }
+  }
+
+  .modal-heading{
+      margin-left: 30%;
+  }
+  .close-button{
+    margin-right: 45%;
+  }
+
+  .change-it{
+    animation-name: flashy;
+    animation-duration: 20s;
+    animation-timing-function: step-end;
+    animation-delay: 1s;
+    animation-direction:inherit;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-play-state:initial;
+  }
+
+  @keyframes flashy {
+    0% {
+        color: black;
+    }
+    33% {
+        color: black;
+    }
+    66% {
+        color: wheat;
+    }
+  }
