@@ -33,3 +33,7 @@ function goToClaimPage() {
   window.location = 'claim.html';
 }
 
+function goBackToIndex()
+{
+  window.location = 'index.html';
+}
